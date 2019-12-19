@@ -6,6 +6,8 @@ import jwtConfig from '../../config/auth';
 
 class SessionController {
   async store(req, res) {
+    console.log(process.env);
+
     const schema = Yup.object().shape({
       email: Yup.string()
         .email()

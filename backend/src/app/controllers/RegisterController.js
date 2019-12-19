@@ -24,6 +24,7 @@ class RegisterController {
           attributes: ['id', 'title', 'duration', 'price'],
         },
       ],
+      attributes: ['id', 'start_date', 'end_date', 'price', 'active'],
     });
 
     return res.status(200).json(registers);

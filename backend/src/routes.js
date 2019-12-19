@@ -21,6 +21,10 @@ routes.put('/users', authMiddleware, UserController.update);
 
 // TO-DO GET USERS ??
 
+// get student
+routes.get('/students?name', authMiddleware, StudentController.index);
+// get students
+routes.get('/students', authMiddleware, StudentController.index);
 // create student
 routes.post('/students', authMiddleware, StudentController.store);
 // update student
