@@ -1,6 +1,8 @@
 import { subDays, startOfToday } from 'date-fns';
 import { Op } from 'sequelize';
+
 import Checkin from '../models/Checkins';
+import Register from '../models/Register';
 
 class PlanController {
   async index(req, res) {
@@ -17,6 +19,16 @@ class PlanController {
 
   async store(req, res) {
     const { student_id } = req.params;
+
+    const register = await Register.findOne({
+      where: {
+        student_id,
+      },
+    });
+
+    if (!register || !register.isActive(register.end_date)) {
+      return res.status(401).json({ error: 'You dont have a valid register' });
+    }
 
     const day = subDays(startOfToday(), 7);
 
