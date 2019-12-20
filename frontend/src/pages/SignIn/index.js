@@ -17,6 +17,7 @@ const schema = Yup.object().shape({
 
 export default function SignIn() {
   const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit({ email, password }) {
     dispatch(signInRequest(email, password));
@@ -32,7 +33,9 @@ export default function SignIn() {
         <Field>SUA SENHA </Field>
         <Input name="password" type="password" placeholder="*************" />
 
-        <button type="submit">Entrar no sistema</button>
+        <button disabled={loading} type="submit">
+          {loading ? 'Carregando...' : 'Entrar no sistema'}
+        </button>
       </Form>
     </Container>
   );

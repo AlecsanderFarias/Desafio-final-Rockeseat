@@ -5,14 +5,14 @@ import { Route, Redirect } from 'react-router-dom';
 import AuthLayout from '../pages/_layouts/auth';
 import DefaultLayout from '../pages/_layouts/Default';
 
-import store from '../store';
+import bucket from '../store';
 
 export default function RouteWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = store.getState().auth.signed;
+  const signed = bucket.store.getState().auth.signed;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
