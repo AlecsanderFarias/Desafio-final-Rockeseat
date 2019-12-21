@@ -36,6 +36,8 @@ routes.put('/students/:id', authMiddleware, StudentController.update);
 
 // get plans
 routes.get('/plans', authMiddleware, PlanController.index);
+// get one plan
+routes.get('/plans/:id', authMiddleware, PlanController.indexOne);
 // create plan
 routes.post('/plans', authMiddleware, PlanController.store);
 // update plan

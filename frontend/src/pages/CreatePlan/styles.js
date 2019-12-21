@@ -38,6 +38,7 @@ export const Content = styled.div`
     span {
       align-self: flex-start;
       color: #ee4d64;
+      display: block;
       margin: 0 0 10px;
       padding-bottom: 10px;
       font-weight: bold;
@@ -111,10 +112,10 @@ export const Card = styled.table`
 `;
 
 export const Field = styled.strong`
+  display: block;
   font-size: 14px;
   color: #444444;
-  margin: 10px 0 10px;
-  padding-bottom: 10px;
+  margin: 0 0 10px;
   align-self: flex-start;
 `;
 

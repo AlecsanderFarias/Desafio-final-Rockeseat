@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logoCut.png';
 import { Container, Content, Profile, Divider } from './styles';
 
-export default function Header() {
+export default function Header(props) {
   const profile = useSelector(state => state.user.profile);
 
   return (

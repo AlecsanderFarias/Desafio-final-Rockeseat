@@ -51,9 +51,9 @@ export default function Students() {
         <CardHeader>
           <strong>Gerenciando alunos</strong>
           <div>
-            <button>
+            <Link to="/students/create">
               <MdAdd size={20} color="#fff" /> CADASTRAR
-            </button>
+            </Link>
             <CardInput>
               <MdSearch size={16} color="#999999" />
               <input
