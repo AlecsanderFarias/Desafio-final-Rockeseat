@@ -8,7 +8,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 85%;
+  width: 100%;
+  max-width: 900px;
   height: fit-content;
   margin: 50px auto;
   padding: 0 30px;
@@ -98,13 +99,24 @@ export const Card = styled.table`
       display: flex;
       justify-content: flex-end;
     }
+
+    button {
+      color: #de3b3b;
+      font-size: 15px;
+      border: none;
+      background: none;
+      background: none;
+    }
+
+    a {
+      color: #4d85ee;
+      font-size: 15px;
+      border: none;
+      background: none;
+      margin-right: 30px;
+      background: none;
+    }
   }
 `;
 
-export const Button = styled.button`
-  color: ${props => `${props.color}`};
-
-  border: none;
-  background: none;
-  margin-left: 30px;
-`;
+export const Button = styled.button``;

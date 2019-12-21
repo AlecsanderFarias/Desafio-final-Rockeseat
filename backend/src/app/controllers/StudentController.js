@@ -24,6 +24,14 @@ class StudentController {
     return res.status(200).json(students);
   }
 
+  async indexOne(req, res) {
+    const { id } = req.params;
+
+    const student = await Student.findByPk(id);
+
+    return res.status(200).json(student);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string()
@@ -86,6 +94,16 @@ class StudentController {
     const returnedStudent = await student.update(req.body);
 
     return res.status(200).json(returnedStudent);
+  }
+
+  async delete(req, res) {
+    const { id } = req.params;
+
+    const student = await Student.findByPk(id);
+
+    await student.destroy();
+
+    return res.status(200).json({ ok: true });
   }
 }
 

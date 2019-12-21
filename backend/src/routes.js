@@ -23,10 +23,14 @@ routes.put('/users', authMiddleware, UserController.update);
 
 // get student
 routes.get('/students?name', authMiddleware, StudentController.index);
+// get one student
+routes.get('/students/:id', authMiddleware, StudentController.indexOne);
 // get students
 routes.get('/students', authMiddleware, StudentController.index);
 // create student
 routes.post('/students', authMiddleware, StudentController.store);
+// delete student
+routes.delete('/students/:id', authMiddleware, StudentController.delete);
 // update student
 routes.put('/students/:id', authMiddleware, StudentController.update);
 
