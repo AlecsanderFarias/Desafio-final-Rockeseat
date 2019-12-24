@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import logo from '../../assets/logoCut.png';
 import { Container, Content, Profile, Divider, CustomLink } from './styles';
 
-export default function Header({ match }) {
+import { signOut } from '../../store/modules/auth/actions';
+
+export default function Header() {
+  const dispatch = useDispatch();
+
   const profile = useSelector(state => state.user.profile);
   const [url, setUrl] = useState('');
 
@@ -20,6 +24,10 @@ export default function Header({ match }) {
       setUrl('order');
     }
   }, [window.location.href]);
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
 
   return (
     <Container>
@@ -44,7 +52,9 @@ export default function Header({ match }) {
         <aside>
           <Profile>
             <strong>{profile.name}</strong>
-            <CustomLink to="/">sair do sistema</CustomLink>
+            <button type="button" onClick={() => handleSignOut()}>
+              sair do sistema
+            </button>
           </Profile>
         </aside>
       </Content>

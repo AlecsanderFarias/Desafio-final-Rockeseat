@@ -53,7 +53,7 @@ export const Profile = styled.div`
     text-align: left;
   }
 
-  a {
+  button {
     padding: 0;
     display: block;
     margin: 2px 0 0 0;
@@ -61,6 +61,8 @@ export const Profile = styled.div`
     font-size: 14px;
     color: #de3b3b;
     text-align: right;
+    background: none;
+    border: none;
   }
 `;
 
