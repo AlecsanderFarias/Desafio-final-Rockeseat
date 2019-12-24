@@ -9,6 +9,28 @@ import Queue from '../../lib/Queue';
 import RegistrationMail from '../jobs/RegistrationMail';
 
 class RegisterController {
+  async indexOne(req, res) {
+    const { id } = req.params;
+
+    const register = await Register.findOne({
+      id,
+      include: [
+        {
+          model: Student,
+          as: 'student',
+          attributes: ['id', 'name'],
+        },
+        {
+          model: Plan,
+          as: 'plan',
+          attributes: ['id', 'title', 'duration', 'price'],
+        },
+      ],
+    });
+
+    return res.status(200).json(register);
+  }
+
   async index(req, res) {
     const registers = await Register.findAll({
       order: [['createdAt', 'ASC']],

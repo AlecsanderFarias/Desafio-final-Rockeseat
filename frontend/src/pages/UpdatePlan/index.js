@@ -113,6 +113,7 @@ export default function CreateStudent({ match }) {
                 <Field>PREÇO TOTAL</Field>
                 <Input
                   disabled
+                  style={{ background: '#eee' }}
                   value={'R$' + price * duration}
                   name="totalPrice"
                   type="text"

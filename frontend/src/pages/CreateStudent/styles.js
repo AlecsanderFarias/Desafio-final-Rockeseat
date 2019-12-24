@@ -103,7 +103,7 @@ export const CardHeader = styled.div`
   }
 `;
 
-export const Card = styled.table`
+export const Card = styled.div`
   width: 100%;
   background: #fff;
   margin: 30px auto;

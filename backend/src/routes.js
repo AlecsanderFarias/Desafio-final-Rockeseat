@@ -47,6 +47,8 @@ routes.delete('/plans/:id', authMiddleware, PlanController.delete);
 
 // get registers
 routes.get('/registers', authMiddleware, RegisterController.index);
+// get one register
+routes.get('/registers/:id', authMiddleware, RegisterController.indexOne);
 // create register
 routes.post('/registers', authMiddleware, RegisterController.store);
 // update register
@@ -55,11 +57,8 @@ routes.put('/registers/:id', authMiddleware, RegisterController.update);
 routes.delete('/registers/:id', authMiddleware, RegisterController.delete);
 
 // get all help_orders
-routes.get(
-  '/students/help-orders',
-  authMiddleware,
-  HelpOrderController.indexall
-);
+routes.get('/help-orders', authMiddleware, HelpOrderController.indexall);
+routes.get('/help-orders/:id', authMiddleware, HelpOrderController.indexOne);
 // answer help_order
 routes.put(
   '/help-orders/:id/answer',

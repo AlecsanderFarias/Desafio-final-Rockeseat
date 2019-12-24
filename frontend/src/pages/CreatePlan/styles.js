@@ -26,7 +26,7 @@ export const Content = styled.div`
     input {
       background: white;
       border-radius: 4px;
-      border: 1px solid #eee;
+      border: 1px solid #999999;
       color: #999999;
       height: 44px;
       padding: 0 15px;
@@ -103,7 +103,7 @@ export const CardHeader = styled.div`
   }
 `;
 
-export const Card = styled.table`
+export const Card = styled.div`
   width: 100%;
   background: #fff;
   margin: 30px auto;

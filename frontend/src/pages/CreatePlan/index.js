@@ -30,8 +30,6 @@ export default function CreateStudent({ match }) {
   const [price, setPrice] = useState('');
 
   async function handleSubmit({ title, duration, price }) {
-    console.log({ title, duration, price });
-
     try {
       setLoading(true);
       await api.post(`/plans`, {
@@ -99,6 +97,7 @@ export default function CreateStudent({ match }) {
                 <Input
                   disabled
                   value={'R$' + price * duration}
+                  style={{ background: '#eee' }}
                   name="totalPrice"
                   type="text"
                   step="0.01"

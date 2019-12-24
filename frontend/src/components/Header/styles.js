@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   background: #fff;
@@ -31,14 +32,6 @@ export const Content = styled.div`
     margin: 0px 10px 0px 20px;
     padding-right: 20px;
   }
-
-  a {
-    font-size: 15px;
-    color: #999999;
-    text-align: left;
-    font-weight: bold;
-    margin-right: 10px;
-  }
 `;
 
 export const Divider = styled.div`
@@ -69,4 +62,12 @@ export const Profile = styled.div`
     color: #de3b3b;
     text-align: right;
   }
+`;
+
+export const CustomLink = styled(Link)`
+  font-size: 15px;
+  color: ${props => (props.active ? 'black ' : '#999999')};
+  text-align: left;
+  font-weight: bold;
+  margin-right: 10px;
 `;

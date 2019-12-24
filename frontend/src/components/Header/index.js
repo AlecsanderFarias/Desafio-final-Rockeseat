@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import logo from '../../assets/logoCut.png';
-import { Container, Content, Profile, Divider } from './styles';
+import { Container, Content, Profile, Divider, CustomLink } from './styles';
 
-export default function Header(props) {
+export default function Header({ match }) {
   const profile = useSelector(state => state.user.profile);
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    const url = window.location.href;
+
+    if (url.indexOf('students') > -1) {
+      setUrl('students');
+    } else if (url.indexOf('plans') > -1) {
+      setUrl('plans');
+    } else if (url.indexOf('registers') > -1) {
+      setUrl('registers');
+    } else {
+      setUrl('order');
+    }
+  }, [window.location.href]);
 
   return (
     <Container>
@@ -14,15 +28,23 @@ export default function Header(props) {
           <img src={logo} alt="GymPoint" />
           <strong>GYMPOINT</strong>
           <Divider />
-          <Link to="/students">ALUNOS</Link>
-          <Link to="/plans">PLANOS</Link>
-          <Link to="/registers">MATRÍCULAS</Link>
-          <Link to="/orders">PEDIDOS DE AUXÍLIO</Link>
+          <CustomLink active={'students' === url} to="/students">
+            ALUNOS
+          </CustomLink>
+          <CustomLink active={'plans' === url} to="/plans">
+            PLANOS
+          </CustomLink>
+          <CustomLink active={'registers' === url} to="/registers">
+            MATRÍCULAS
+          </CustomLink>
+          <CustomLink active={'order' === url} to="/orders">
+            PEDIDOS DE AUXÍLIO
+          </CustomLink>
         </nav>
         <aside>
           <Profile>
             <strong>{profile.name}</strong>
-            <Link to="/">sair do sistema</Link>
+            <CustomLink to="/">sair do sistema</CustomLink>
           </Profile>
         </aside>
       </Content>

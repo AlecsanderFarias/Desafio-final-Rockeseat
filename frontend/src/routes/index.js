@@ -14,6 +14,9 @@ import CreateStudent from '../pages/CreateStudent';
 import UpdatePlan from '../pages/UpdatePlan';
 import CreatePLan from '../pages/CreatePlan';
 
+import CreateRegister from '../pages/CreateRegister';
+import UpdateRegister from '../pages/UpdateRegister';
+
 export default function Routes() {
   return (
     <Switch>
@@ -33,8 +36,15 @@ export default function Routes() {
       <Route path="/plans/:id" exact isPrivate component={UpdatePlan} />
 
       <Route path="/registers" exact isPrivate component={Registers} />
-      <Route path="/orders" exact isPrivate component={HelpOrders} />
+      <Route
+        path="/registers/create"
+        exact
+        isPrivate
+        component={CreateRegister}
+      />
+      <Route path="/registers/:id" exact isPrivate component={UpdateRegister} />
 
+      <Route path="/orders" exact isPrivate component={HelpOrders} />
       <Route path="/" isPrivate component={() => <h1>404</h1>} />
     </Switch>
   );
