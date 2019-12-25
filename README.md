@@ -16,4 +16,5 @@ Projeto completo do plataforma GYMPOINT com back-end, front-end e mobile
   -> Agora o servidor ja esta rodando localmente na porta 3333;<br/><br/>
   
   -Frontend <br/><br/>
-  -> Abrir um terminal na pasta de frontend e executar o comando yarn start;<br/><br/>
+  -> Execute no terminal rodando dentro da pasta do frontend o comando "yarn" , para instalar todas as dependencias do projeto ;<br/>
+  -> executar o comando yarn start;<br/><br/>
