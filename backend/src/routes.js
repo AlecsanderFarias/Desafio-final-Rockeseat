@@ -19,12 +19,8 @@ routes.post('/sessions', SessionController.store);
 // update user
 routes.put('/users', authMiddleware, UserController.update);
 
-// TO-DO GET USERS ??
-
 // get student
 routes.get('/students?name', authMiddleware, StudentController.index);
-// get one student
-routes.get('/students/:id', authMiddleware, StudentController.indexOne);
 // get students
 routes.get('/students', authMiddleware, StudentController.index);
 // create student
@@ -77,5 +73,8 @@ routes.get('/students/:student_id/checkins', ChekinController.index);
 routes.get('/students/:student_id/help-orders', HelpOrderController.index);
 // create help_order
 routes.post('/students/:student_id/help-orders', HelpOrderController.store);
+
+// get student
+routes.get('/students/:id', StudentController.indexOne);
 
 export default routes;
