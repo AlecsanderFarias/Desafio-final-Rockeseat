@@ -9,6 +9,7 @@ class PlanController {
     const { student_id } = req.params;
 
     const Checkins = await Checkin.findAll({
+      order: [['createdAt', 'DESC']],
       where: {
         student_id,
       },

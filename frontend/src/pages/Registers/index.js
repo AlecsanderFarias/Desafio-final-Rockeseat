@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MdSearch, MdAdd } from 'react-icons/md';
+import { MdCheckCircle, MdAdd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { Container, Content, CardHeader, Card } from './styles';
 import { format, parseISO } from 'date-fns';
@@ -88,7 +88,10 @@ export default function Students() {
                   <span>{register.end_date}</span>
                 </td>
                 <td>
-                  <span>{register.active ? 'ativa' : 'nao ativa'} </span>
+                  <MdCheckCircle
+                    size={20}
+                    color={register.active ? '#42cb59' : '#dddddd'}
+                  />
                 </td>
                 <td>
                   <Link to={`/registers/${register.id}`}>editar</Link>

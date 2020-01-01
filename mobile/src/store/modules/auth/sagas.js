@@ -7,13 +7,11 @@ import { signFailure, signInSucess } from './actions';
 
 export function* signIn({ payload }) {
   try {
-    const { id } = payload;
+    const response = yield call(api.get, `/students/${payload.id}`);
 
-    const response = yield call(api.get, `/students/${id}`);
+    const { id } = response.data;
 
-    Alert.alert(response.data.id);
-
-    yield put(signInSucess(response.data.id));
+    yield put(signInSucess(id));
 
     /* history.push('/students'); */
   } catch (error) {
