@@ -4,6 +4,18 @@ import { Op } from 'sequelize';
 import Student from '../models/Student';
 
 class StudentController {
+  async indexByEmail(req, res) {
+    const { email } = req.params;
+
+    const student = await Student.findOne({
+      where: {
+        email,
+      },
+    });
+
+    return res.status(200).json(student);
+  }
+
   async index(req, res) {
     const { name } = req.query;
 

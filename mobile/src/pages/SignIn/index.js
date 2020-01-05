@@ -9,11 +9,11 @@ import { signInRequest } from '../../store/modules/auth/actions';
 
 export default function SignIn() {
   const dispatch = useDispatch();
-  const [id, setId] = useState('');
+  const [email, setEmail] = useState('');
   const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
-    dispatch(signInRequest(id));
+    dispatch(signInRequest(email));
   }
 
   return (
@@ -22,13 +22,12 @@ export default function SignIn() {
 
       <Form>
         <Input
-          keyboardType="number-pad"
           autoCorrect={false}
-          placeholder="Informe seu ID de cadastro"
+          placeholder="Informe seu Id de cadastro"
           returnKeyType="send"
           onSubmitEditing={() => handleSubmit()}
-          value={id}
-          onChangeText={setId}
+          value={email}
+          onChangeText={setEmail}
         />
 
         <SubmitButton loading={loading} onPress={() => handleSubmit()}>

@@ -77,4 +77,7 @@ routes.post('/students/:student_id/help-orders', HelpOrderController.store);
 // get student
 routes.get('/students/:id', StudentController.indexOne);
 
+// get student by email
+routes.post('/students/:email', StudentController.indexByEmail);
+
 export default routes;
