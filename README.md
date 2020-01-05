@@ -10,6 +10,7 @@ Projeto completo do plataforma GYMPOINT com back-end, front-end e mobile
   -> Crie um .env na raiz do projeto , copie o conteudo do .env.example e coloque no .env, depois <br/>
      preencha os campos com o dados do seus container;<br/>
   -> Execute no terminal rodando dentro da pasta do backend o comando "yarn" , para instalar todas as dependencias do projeto ;<br/>
+  -> Execute no terminal yarn add dotenv;<br/>
   -> Execute no terminal yarn sequelize db:seed:all;<br/>
   -> Execute no terminal yarn db:migrate;<br/>
   -> Execute no mesmo terminal usado acima o comando "yarn dev";<br/>
