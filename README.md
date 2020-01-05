@@ -29,3 +29,6 @@ Projeto completo do plataforma GYMPOINT com back-end, front-end e mobile
   -> Executar o comando yarn react-native start;<br/>
   -> Executar o comando (em outro terminal) yarn react-native run-android;<br/>
   -> OBS: o "login" no mobile so eh permitido pelo email de alunos existentes, ou seja , antes de usar o aplicativo voce deve cadastrar um aluno na aplicacao pela plataforma web;<br/><br/>
+  
+  
+  OBS: O projeto foi feito apenas para Android, nao foi comprovado a funcionalidade do mesmo usando IOS
