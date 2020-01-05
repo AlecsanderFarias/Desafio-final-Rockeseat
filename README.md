@@ -24,8 +24,8 @@ Projeto completo do plataforma GYMPOINT com back-end, front-end e mobile
   
   -Mobile <br/><br/>
   -> Execute no terminal rodando dentro da pasta do mobile o comando "yarn" , para instalar todas as dependencias do projeto ;<br/>
-  -> Iniciar o emulador para a sua aplicacao ou liagr o telefone ao cabo para fazer a opcao de depuracao;<br/>
+  -> Iniciar o emulador para a sua aplicacao ou ligue um telefone (como modo de desenvolvedor e depuracao USB ativa) ao cabo para fazer a opcao de depuracao;<br/>
   -> Trocar o end-point do backend na pasta "/src/services" para o ip da sua maquina ou o host atual do backend;<br/>
   -> Executar o comando yarn react-native start;<br/>
   -> Executar o comando (em outro terminal) yarn react-native run-android;<br/>
-  -> OBS: o "login" no mobile so eh permitido pelo id de alunos existentes, ou seja , antes de usar o aplicativo voce deve cadastrar um aluno na aplicacao pela plataforma web;<br/><br/>
+  -> OBS: o "login" no mobile so eh permitido pelo email de alunos existentes, ou seja , antes de usar o aplicativo voce deve cadastrar um aluno na aplicacao pela plataforma web;<br/><br/>
