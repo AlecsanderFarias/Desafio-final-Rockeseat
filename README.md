@@ -13,6 +13,7 @@ Projeto completo do plataforma GYMPOINT com back-end, front-end e mobile
   -> Execute no terminal yarn sequelize db:seed:all;<br/>
   -> Execute no terminal yarn db:migrate;<br/>
   -> Execute no mesmo terminal usado acima o comando "yarn dev";<br/>
+  -> Execute em outro terminal o comando "yarn queue";<br/>
   -> Agora o servidor ja esta rodando localmente na porta 3333;<br/><br/>
   
   -Frontend <br/><br/>
